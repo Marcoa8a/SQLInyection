@@ -1,0 +1,95 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: Verdana, sans-serif; 
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3587F2;
+    color: white;
+    padding: 10px;
+}
+
+#logo-container {
+    display: flex;
+    align-items: center; 
+}
+
+#logo {
+    width: 50px;
+    height: auto;
+}
+
+#logo-text {
+    font-size: 1.2rem;
+    margin-left: 10px; 
+}
+
+
+#menu {
+    flex: 1;
+    text-align: right;
+}
+
+#menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#menu ul li {
+    margin-right: 20px;
+}
+
+#menu ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+#carousel {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#image-container {
+    display: flex;
+    width: 300%;
+    transition: transform 0.5s ease-in-out;
+}
+
+#image-container img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+ #table-container {
+            margin-top: 20px;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: auto;
+            margin-top: 20px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        th {
+            background-color: #3B7FD9;
+            color: white;
+        }

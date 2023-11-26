@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/styles2.css">
+</head>
+<body>
+    <div>
+        <nav id="navbar">
+            <div id="logo-container">
+                <img id="logo" src="images/logo bank.png" alt="Logo "> 
+                <span id="logo-text">MAEK Bank</span> 
+            </div>
+            <div id="menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">User Info</a></li>
+                    <li><a href="login.php">Logout</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div>  
+            <div id="carousel">
+                <div id="image-container">
+                    <img src="images/bank3.jpeg" alt="Image 1">
+                    <img src="images/bank4.jpg" alt="Image 2">
+                    <img src="images/bank5.jpg" alt="Image 3">
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            let currentIndex = 0;
+            const images = document.querySelectorAll('#image-container img');
+            const totalImages = images.length;
+        
+            function showImage(index) {
+                const newTransformValue = -index * (100 / totalImages) + '%';
+                document.getElementById('image-container').style.transform = 'translateX(' + newTransformValue + ')';
+            }
+        
+            function nextImage() {
+                currentIndex = (currentIndex + 1) % totalImages;
+                showImage(currentIndex);
+            }
+        
+            function prevImage() {
+                currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+                showImage(currentIndex);
+            }
+        
+            setInterval(nextImage, 3000);
+        </script>
+    </div>
+</body>
+</html>
