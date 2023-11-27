@@ -17,10 +17,10 @@
     $stmt->bindParam(":password", $password, PDO::PARAM_STR);
     $stmt->execute();
 
-    if ($stmt->num_rows > 0) {
-        $rows = $result->fetch_assoc();
-        $rol = $rows['rol'];
-        $userId = $rows['userId'];
+    if ($stmt->rowCount() > 0) {
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $rol = $row['rol']; // Cambiado de $rows a $row
+        $userId = $row['userId'];
         
         if ($rol == '1') {
             $_SESSION['userId'] = $userId;
@@ -32,7 +32,6 @@
             exit();
         }
     } else {
-        
         header("Location: index.html?error=1");
         exit();
     }
@@ -40,3 +39,4 @@
     $stmt->close();
     $connection->close();
 ?>
+
